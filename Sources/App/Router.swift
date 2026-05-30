@@ -8,6 +8,10 @@ func buildRouter() throws -> Router<AppRequestContext> {
     FileMiddleware("public")
   }
 
+  router.get("/up") { _, _ in
+    Response(status: .ok)
+  }
+
   router.get("/") { _, _ in
     var calender = Calendar.current
     calender.timeZone = TimeZone(identifier: "Asia/Tokyo")!
